@@ -1,0 +1,13 @@
+{
+  "name": "jitendra-badekar-public-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "जितेंद्र बाळासाहेब बडेकर यांचे मराठी सार्वजनिक प्रोफाइल संकेतस्थळ",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "check": "node --check server.js && node --check public/app.js && node --check public/content.js && node --check public/admin.js"
+  },
+  "engines": {
+    "node": ">=20.6"
+  }
+}
