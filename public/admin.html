@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f7f7f2">
+  <title>प्रशासक डॅशबोर्ड | प्रोफाइल संपादन</title>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#main">मुख्य मजकुराकडे जा</a>
+  <div class="demo-banner" role="note"><strong>डेमो वेबसाइट</strong><span>सार्वजनिक पृष्ठांवरील नमुना सामग्री प्रशासकाने पडताळून बदलावी.</span></div>
+  <header class="site-header admin-header"><div class="header-inner wrap"><a class="identity" href="/"><span class="identity-mark" aria-hidden="true">जि</span><span class="identity-copy"><strong>प्रशासक डॅशबोर्ड</strong><small><span id="admin-profile-name">जितेंद्र बाळासाहेब बडेकर</span> · प्रोफाइल माहिती संपादन</small></span></a><a class="admin-back" href="/">संकेतस्थळाकडे परत <span aria-hidden="true">↗</span></a></div></header>
+  <main id="main" class="admin-main wrap">
+    <div class="admin-heading"><span class="section-index">सामग्री व्यवस्थापन</span><h1>प्रोफाइल तपशील</h1><p>येथील बदल सार्वजनिक संकेतस्थळावर दिसतील. नाव, पद आणि इतर दावे प्रकाशित करण्यापूर्वी तपासा.</p></div>
+    <section class="admin-panel" id="login-panel" aria-labelledby="login-title"><div class="admin-panel-heading"><span class="admin-panel-icon" aria-hidden="true">⌑</span><div><h2 id="login-title">प्रशासक लॉगिन</h2><p>प्रवेशासाठी सर्व्हरवर सेट केलेला पासवर्ड वापरा.</p></div></div><form id="login-form" class="admin-form"><label for="admin-password">पासवर्ड</label><input id="admin-password" name="password" type="password" autocomplete="current-password" required><button class="button button-primary" type="submit">लॉगिन करा <span aria-hidden="true">→</span></button><p class="form-message" id="login-message" role="status" aria-live="polite"></p></form><p class="admin-hint">पासवर्ड सेट नसेल तर प्रकल्पाच्या `.env` फाइलमध्ये `ADMIN_PASSWORD` भरा आणि सर्व्हर पुन्हा सुरू करा.</p></section>
+    <section class="admin-panel is-hidden" id="editor-panel" aria-labelledby="editor-title"><div class="admin-panel-heading"><span class="admin-panel-icon" aria-hidden="true">✎</span><div><h2 id="editor-title">नाव व पद संपादित करा</h2><p>मराठी नाव हे संकेतस्थळावर प्राथमिक नाव म्हणून वापरले जाईल.</p></div></div><form id="profile-form" class="admin-form"><label for="name-mr">पूर्ण नाव — मराठी</label><input id="name-mr" name="fullNameMr" type="text" maxlength="100" required><label for="name-en">पूर्ण नाव — इंग्रजी (मेटाडेटा/पर्यायी नाव)</label><input id="name-en" name="fullNameEn" type="text" maxlength="120" required><label for="designation-mr">पदनाम — मराठी</label><input id="designation-mr" name="designationMr" type="text" maxlength="180" required><p class="field-help">सध्याचे पदनाम: सभापती, समाज कल्याण विभाग, पुणे जिल्हा परिषद</p><button class="button button-primary" type="submit">बदल जतन करा <span aria-hidden="true">✓</span></button><p class="form-message" id="save-message" role="status" aria-live="polite"></p></form><div class="admin-actions"><a href="/" class="text-link">सार्वजनिक संकेतस्थळ पहा <span aria-hidden="true">↗</span></a><button class="button button-outline" id="logout-button" type="button">लॉगआउट</button></div></section>
+    <aside class="admin-note"><strong>प्रकाशन सूचना</strong><p>जीवनवृत्त, पूर्वीची पदे, उपक्रम, आकडेवारी, योजना आणि बातम्या यांची पडताळलेली माहितीच प्रकाशित करा. या डॅशबोर्डमध्ये सध्या केवळ नाव आणि पद संपादनाची सुविधा आहे.</p></aside>
+  </main>
+  <footer class="admin-footer"><div class="wrap"><span>खाजगी प्रशासक क्षेत्र</span><span><a href="/">मुख्यपृष्ठ</a></span></div></footer>
+</body>
+</html>
