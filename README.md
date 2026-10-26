@@ -13,6 +13,19 @@
 
 या प्रकल्पात तृतीय-पक्ष पॅकेजेस नाहीत. `npm run check` JavaScript फाइल्सचे syntax तपासते.
 
+## GitHub Pages वर होस्टिंग
+
+हा प्रकल्प Node सर्व्हर आणि प्रोफाइल API वापरणाऱ्या स्थानिक आवृत्तीबरोबर GitHub Pages साठी स्थिर वेबसाइटही तयार करतो. GitHub Pages वर `public/` फोल्डर थेट publish करू नका: त्यातील पृष्ठ टेम्पलेट्स `server.js` भरतो आणि `/api/profile` फक्त Node सर्व्हरवर उपलब्ध आहे. थेट source फाइल्स publish केल्यास style, नेव्हिगेशन आणि विभागांचे मजकूर योग्यरीत्या लोड होणार नाहीत.
+
+1. हा पूर्ण प्रकल्प GitHub repository च्या `main` किंवा `master` branch मध्ये push करा.
+2. Repository मध्ये **Settings → Pages → Build and deployment → Source → GitHub Actions** निवडा.
+3. `.github/workflows/pages.yml` workflow स्थिर HTML पृष्ठे तयार करून GitHub Pages वर deploy करेल. Repository Pages किंवा custom domain यानुसार योग्य base path workflow आपोआप देतो.
+4. GitHub मध्ये **Actions** टॅबमधील “Build and deploy GitHub Pages” run पूर्ण झाल्यावर दिलेला Pages URL उघडा.
+
+स्थानिक स्थिर आवृत्ती तयार करण्यासाठी `npm run build:pages` चालवा. तयार होणारा `dist/` हा deploy output आहे; GitHub workflow तो स्वतः तयार करतो. Windows PowerShell मध्ये Project Pages साठी स्थानिक build करताना आधी `$env:SITE_BASE_PATH="/repository-name/"` आणि मग `npm run build:pages` चालवा. Account-site/custom-domain साठी base path `/` ठेवा.
+
+GitHub Pages static hosting असल्याने प्रशासक लॉगिनमधून बदल जतन होत नाहीत. Deploy केलेल्या आवृत्तीत `/admin/` हे profile बदलण्याची पद्धत दाखवते. नाव किंवा पद बदलण्यासाठी `data/profile.json` संपादित करून push करा. `npm start` ने चालणारी Node आवृत्तीचा सुरक्षित, server-backed admin dashboard स्वतंत्रपणे काम करतो.
+
 ## प्रशासक प्रवेश आणि माहिती जतन
 
 लॉगिन पासवर्ड फक्त सर्व्हरच्या `.env` फाइलमधून वाचला जातो; तो client code किंवा repository मध्ये ठेवू नका. लॉगिन session HttpOnly, SameSite cookie वापरते. उत्पादनात HTTPS आवश्यक आहे (`NODE_ENV=production` केल्यास cookie वर `Secure` flag लागतो). प्रोफाइल बदल `data/profile.json` मध्ये जतन होतात; त्या फोल्डरचा बॅकअप घ्या. सध्या एकच प्रशासक खाते आहे; वापरकर्ता/संपादक भूमिका किंवा डेटाबेस जोडलेला नाही.
